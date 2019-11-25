@@ -1,0 +1,6 @@
+build/*.js
+config/*.js
+dist/*.js
+src/
+examples/router/*.js
+examples/*/*.js
