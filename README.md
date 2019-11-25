@@ -19,7 +19,7 @@ import {uiSelect} from 'vue-common-select'
 ##基本属性支持 disabled  placeholder 等
 
 ```
-```
+```bash
  fetchSelData(param) {
  // 自己自定义的查询参数 customerName  返回一个promise
       if (param) param = {...param, customerName: param.name}
@@ -41,29 +41,37 @@ import {uiSelect} from 'vue-common-select'
 # 部分截图
 <img src="https://github.com/logep/vue-common-select/tree/master/examples/assets/home.png"/>
 #第一种基本用法 默认 展示的name属性 值是code
-```
+
+```bash
        <ui-select :fetchData="fetchSelData" widthSl="163" v-model="id">
                     </ui-select>
 ```
-#第二种基本用法 自定义 属性展示 自定义列表样式  值是id  展示{{item.name}} 里这个name自定义
-```
+
+## 第二种基本用法 自定义 属性展示 自定义列表样式  值是id  展示item.name 里这个name自定义
+
+```bash
        <ui-select :fetchData="fetchSelData" widthSl="163" :props="{value:'id'}" v-model="id">
         <template slot-scope="{ item }">
                              <div>{{ item.name }}</div>
                              </template>
                     </ui-select>
 ```
-#第三种基本用法 自定义 url 不需要写 fetchData方法
-```
+
+# 第三种基本用法 自定义 url 不需要写 fetchData方法
+
+```bash
        <ui-select widthSl="163" :props="{value:'id',url:'/XXX?ccc'}" v-model="id">
         <template slot-scope="{ item }">
                              <div>{{ item.name }}</div>
                              </template>
                     </ui-select>
 ```
-##第四种基本用法 默认回写值 在编辑表格时需要可参考  弹出页面时syncBoolean设置true
-##syncData=[{value:'',label:''}] 就是下拉框options的值 才能回写成功
-```
+
+## 第四种基本用法 默认回写值 在编辑表格时需要可参考  弹出页面时syncBoolean设置true
+
+
+```bash
+syncData=[{value:'',label:''}] 就是下拉框options的值 才能回写成功
        <ui-select widthSl="163"
           :isEdit.sync="syncBoolean"
            :selId.sync="syncData"
