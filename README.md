@@ -30,16 +30,7 @@ import {uiSelect} from 'vue-common-select'
 
 ```
 
-## dependencies
 
-| Project |Description |
-|---------|-------------|
-| [element]          |A Vue.js 2.0 UI Toolkit for Web  |
-
-[element]: https://github.com/ElemeFE/element
-
-# 部分截图
-<img src="https://github.com/logep/vue-common-select/tree/master/examples/assets/home.png"/>
 #第一种基本用法 默认 展示的name属性 值是code
 
 ```bash
@@ -81,3 +72,6 @@ syncData=[{value:'',label:''}] 就是下拉框options的值 才能回写成功
                              </template>
                     </ui-select>
 ```
+
+# 部分截图
+<img src="https://github.com/logep/vue-common-select/tree/master/examples/assets/home.png"/>
