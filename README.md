@@ -77,3 +77,5 @@ syncData=[{value:'',label:''}] 就是下拉框options的值 才能回写成功
 <img src="https://github.com/logep/vue-common-select/tree/master/examples/assets/home.png"/>
 
 # 测试rebase命令
+
+# 测试远程分支和本地分支不同命问题
