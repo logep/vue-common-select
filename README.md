@@ -73,6 +73,21 @@ syncData=[{value:'',label:''}] 就是下拉框options的值 才能回写成功
                     </ui-select>
 ```
 
+## 第四种基本用法 可以自定义查询参数名称一个(queryStr 是参数)
+
+
+```bash
+syncData=[{value:'',label:''}] 就是下拉框options的值 才能回写成功
+       <ui-select widthSl="163"
+          :isEdit.sync="syncBoolean"
+           :selId.sync="syncData"
+       :props="{value:'id',label:'label',queryStr:'name',url:'XX/XX'}"  v-model="id">
+        <template slot-scope="{ item }">
+                             <div>{{ item.name }}</div>
+                             </template>
+                    </ui-select>
+```
+
 # 部分截图
 <img src="https://github.com/logep/vue-common-select/tree/master/examples/assets/home.png"/>
 
