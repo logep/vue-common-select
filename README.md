@@ -72,6 +72,18 @@ syncData=[{value:'',label:''}] 就是下拉框options的值 才能回写成功
                              </template>
                     </ui-select>
 ```
+## 第五种基本用法 默认回写值 和第四种类似 但通过id值查询 查询时syncBoolean设置true
+
+
+```bash
+       <ui-select widthSl="163"
+          :isFetch.sync="syncBoolean"
+       :props="{value:'id',url:'/XXX?ccc'}" v-model="id">
+        <template slot-scope="{ item }">
+                             <div>{{ item.name }}</div>
+                             </template>
+                    </ui-select>
+```
 
 ## 第四种基本用法 可以自定义查询参数名称一个(queryStr 是参数)
 

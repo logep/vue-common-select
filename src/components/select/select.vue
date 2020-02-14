@@ -79,6 +79,11 @@
     export default {
         name:'uiSelect',
         props: {
+
+            isFetch: {
+                type: Boolean,
+                default: false
+            },
             isEdit: {
                 type: Boolean,
                 default: false
@@ -136,21 +141,7 @@
             },
             // 获取接口数据
             getUsers(params) {
-                // get('/basic/cust/query', param,{},false).then(res => {
-                //   this.options = res.result;
-                // });
 
-                // return new Promise((resolve, reject) => {
-                //   get('/basic/pro/query', param, {}, false).then(
-                //     res => {
-                //       console.log(res)
-                //       resolve(res.result)
-                //     },
-                //     reason => {
-                //       reject()
-                //     }
-                //   )
-                // })
                 if(this.config.url){
                     let qryStr=this.queryString;
                     let extendsStr={}
@@ -218,6 +209,11 @@
                     if (this.isEdit && this.selId) {
                         this.options=this.selId
                         this.$emit('update:isEdit', false)
+                    }
+                    if (this.isFetch) {
+                        const param = { id: value }
+                        this.getUsers(param)
+                        this.$emit('update:isFetch', false)
                     }
                 },
                 immediate: true
