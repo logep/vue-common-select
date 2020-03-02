@@ -10,7 +10,7 @@
                :disabled="disabled"
                :placeholder="placeholder">
         <el-option v-for="(item, index) in options"
-                   :key="index" :label="item[label]" :value="item[code]">
+                   :key="item[code]" :label="item[label]" :value="item[code]">
             <slot :item="item" v-if="$scopedSlots.default"></slot>
             <template  v-else>{{item.name}}</template>
         </el-option>
@@ -132,6 +132,10 @@
         },
 
         methods: {
+            // 在options里使用 修改label的值 :label="label(item)"
+            label(item) {
+                return item[this.config.value] + '-' + item[this.config.label]
+            },
             focus() {
                 this.options = []
                 this.getUsers()

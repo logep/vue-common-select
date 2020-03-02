@@ -105,4 +105,8 @@ syncData=[{value:'',label:''}] 就是下拉框options的值 才能回写成功
 
 # 测试rebase命令
 
+#更新日志
+## 索引更改，否则影响下拉框的显示
+## label自定义  使用方式:label=label(item)
+
 # 测试远程分支和本地分支不同命问题
